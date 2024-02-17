@@ -1,0 +1,47 @@
+body {
+    background-image: url("./assets/world.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 2s ease;
+}
+
+.card:hover {
+    transform: rotateY(180deg);
+}
+.front, .back {
+    background-color: #faf0e4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.back {
+    z-index: -1;
+    transform: rotateY(180deg);
+}
